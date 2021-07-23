@@ -199,29 +199,7 @@ $jsonfile = json_decode($getfile);
                                         <td><?php echo rupiah($obj->harga *= $obj->qty); ?></td>
                                         <td>
                                         <a class="btn btn-xs btn-primary" href="update.php?id=<?php echo $index; ?>"><i class="fas fa-edit    "></i> Edit</a>
-                                        <a class="btn btn-xs btn-danger" href="#del" data-toggle="modal"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
-                                        <!-- Delete -->
-                                        <div class="modal fade" id="del" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h4 class="modal-title" id="myModalLabel">Delete</h4>
-                                                            <button type="button" class="close btn-danger" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                        <div class="container-fluid">
-                                                            <h5>TEMENAN A DI HAPUS IKI</center></h5> 
-                                                        </div> 
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-success" data-dismiss="modal"><span class="glyphicon glyphicon-remove"><i class="fa fa-times" aria-hidden="true"></i></span> Cancel</button>
-                                                            <a class="btn btn-xs btn-danger" href="delete.php?id=<?php echo $index; ?>">Delete</a>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        <!-- /.modal -->
+                                        <a class="btn btn-xs btn-danger" href="delete.php?id=<?php echo $index; ?>" onclick="if (!confirm('Tenan a di hapus?')) { return false }"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
@@ -281,7 +259,7 @@ $jsonfile = json_decode($getfile);
 
     <!-- modal -->
     <?php include('add_modal.php'); ?>
-    <?php include('delete _modal.php'); ?>
+  
 
     <!-- Bootstrap core JavaScript-->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
